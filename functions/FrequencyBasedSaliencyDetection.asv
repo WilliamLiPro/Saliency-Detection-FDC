@@ -69,7 +69,7 @@ end
 
 if strcmp(colorSpace,'lab')
     im_out=double(RGB2Lab(im_in,0))/255;
-    im_out(:,:,2:3)=im_out(:,:,2:3)*3-1.5;  %对uin8型数据的归一化校正
+    im_out(:,:,2:3)=im_out(:,:,2:3)*4-2;  %对uin8型数据的归一化校正
 elseif strcmp(colorSpace,'xyz')
     cform=makecform('srgb2xyz');
     im_out=applycform(im_in,cform);
@@ -157,6 +157,11 @@ way=ft_param.way;
 %     end
 % end
 
+if strcmp(way,'SSS')	%多尺度特征计算
+     ft=sssFeatureMap(im_in,1);
+     return;
+end
+
 % 计算各个通道特征图
 for i=1:c
     dct_channels{i}=dct2(im_in(:,:,i));
@@ -198,15 +203,12 @@ for i=1:c
 %             kernelF(1,x)=0;kernelF(y,1)=0;
         end
         msg_mat=idct2(dct_channels{i}.*kernelF);
-    elseif strcmp(way,'SSS')	%多尺度特征计算
-        [ft_channels{i},weight(i)]=sssFeatureMap(im_in(:,:,i),1);
-        continue;
     else
         
     end
     
     ft_channels{i}=msg_mat.*msg_mat; %特征图
-    weight(i)=(std(ft_channels{i}(:))/(mean(ft_channels{i}(:))+0.000000001))^4;   %通道权重
+    weight(i)=(std(ft_channels{i}(:))/(mean(ft_channels{i}(:))+0.0000001))^4;   %通道权重
 end
 
 % 特征图通道融合
@@ -284,19 +286,27 @@ for i=1:st_hn
 end
 end
 
-function [ft,max_w]=sssFeatureMap(im_in,max_pix)
+function ft=sssFeatureMap(im_in,max_pix)
 %采用SSS方法生成一单通道特征图
+[n,m,c]=size(im_in,3);
 
 %1.计算FFT频谱强度及相位
-fft_map=fft2(im_in);
+fft_map=zeros(n,m,c);
+for i=1:c
+    fft_map(:,:,i)=fft2(im_in(:,:,i));
+end
 a_map=abs(fft_map);     %幅度
 fft_map=fft_map./(a_map+0.00001*(a_map==0)); %相位
 
-a_map=fftshift(a_map);  %将低频放到图像中心
+for i=1:c
+    a_map(:,:,i)=fftshift(a_map(:,:,i));  %将低频放到图像中心
+end
 a_map=log(a_map+1);
 
 % 计算卷积核
 x_sz=[1:31]-16;
+gkx=exp(-(-4:4).^2/8);
+gky=gkx';
 
 % 多次卷积
 ft=zeros(size(im_in));
@@ -309,15 +319,19 @@ for sz=0:7
     % 幅度谱卷积
     cur_ft=imfilter(a_map,kernel_x);
     cur_ft=imfilter(cur_ft,kernel_x');
-    cur_ft=fftshift(cur_ft);
+    for i=1:c
+        cur_ft=fftshift(cur_ft);
+    end
     cur_ft=exp(cur_ft)-1;
-    
-    %低通
     
     % 特征图
     cur_ft=ifft2(cur_ft.*fft_map);
     cur_ft=cur_ft.*conj(cur_ft);
     cur_ft=cur_ft.*(max_pix/max(cur_ft(:)));  %归一化幅度
+    
+    % 高斯滤波
+    cur_ft=imfilter(cur_ft,gkx);
+    cur_ft=imfilter(cur_ft,gky);
     
     % 计算特征图熵
 %     hmp=ceil(cur_ft*4); %分层统计结果

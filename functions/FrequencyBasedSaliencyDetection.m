@@ -157,6 +157,11 @@ way=ft_param.way;
 %     end
 % end
 
+if strcmp(way,'SSS')	%多尺度特征计算
+     ft=sssFeatureMap(im_in,1);
+     return;
+end
+
 % 计算各个通道特征图
 for i=1:c
     dct_channels{i}=dct2(im_in(:,:,i));
@@ -198,9 +203,6 @@ for i=1:c
 %             kernelF(1,x)=0;kernelF(y,1)=0;
         end
         msg_mat=idct2(dct_channels{i}.*kernelF);
-    elseif strcmp(way,'SSS')	%多尺度特征计算
-        [ft_channels{i},weight(i)]=sssFeatureMap(im_in(:,:,i),1);
-        continue;
     else
         
     end
@@ -284,15 +286,21 @@ for i=1:st_hn
 end
 end
 
-function [ft,max_w]=sssFeatureMap(im_in,max_pix)
+function ft=sssFeatureMap(im_in,max_pix)
 %采用SSS方法生成一单通道特征图
+[n,m,c]=size(im_in);
 
 %1.计算FFT频谱强度及相位
-fft_map=fft2(im_in);
+fft_map=zeros(n,m,c);
+for i=1:c
+    fft_map(:,:,i)=fft2(im_in(:,:,i));
+end
 a_map=abs(fft_map);     %幅度
 fft_map=fft_map./(a_map+0.00001*(a_map==0)); %相位
 
-a_map=fftshift(a_map);  %将低频放到图像中心
+for i=1:c
+    a_map(:,:,i)=fftshift(a_map(:,:,i));  %将低频放到图像中心
+end
 a_map=log(a_map+1);
 
 % 计算卷积核
@@ -311,17 +319,23 @@ for sz=0:7
     % 幅度谱卷积
     cur_ft=imfilter(a_map,kernel_x);
     cur_ft=imfilter(cur_ft,kernel_x');
-    cur_ft=fftshift(cur_ft);
+    for i=1:c
+        cur_ft(:,:,i)=fftshift(cur_ft(:,:,i));
+    end
     cur_ft=exp(cur_ft)-1;
     
     % 特征图
-    cur_ft=ifft2(cur_ft.*fft_map);
-    cur_ft=cur_ft.*conj(cur_ft);
-%     cur_ft=cur_ft.*(max_pix/max(cur_ft(:)));  %归一化幅度
+    cur_ft_sm=ifft2(cur_ft(:,:,1).*fft_map(:,:,1));
+    cur_ft_sm=cur_ft_sm.*conj(cur_ft_sm);
+    for i=2:c
+        cur_ft_c=ifft2(cur_ft(:,:,i).*fft_map(:,:,i));
+        cur_ft_sm=cur_ft_sm+cur_ft_c.*conj(cur_ft_c);
+    end
+    cur_ft_sm=cur_ft_sm.*(max_pix/max(cur_ft_sm(:)));  %归一化幅度
     
     % 高斯滤波
-    cur_ft=imfilter(cur_ft,gkx);
-    cur_ft=imfilter(cur_ft,gky);
+    cur_ft_sm=imfilter(cur_ft_sm,gkx);
+    cur_ft_sm=imfilter(cur_ft_sm,gky);
     
     % 计算特征图熵
 %     hmp=ceil(cur_ft*4); %分层统计结果
@@ -337,10 +351,10 @@ for sz=0:7
 %         min_hs=hs;
 %     end
 
-    weight=(std(cur_ft(:))/mean(cur_ft(:))+0.0001)^4;
+    weight=(std(cur_ft_sm(:))/mean(cur_ft_sm(:))+0.0001)^6;
     
     if weight>max_w
-        ft=cur_ft;
+        ft=cur_ft_sm;
         max_w=weight;
     end
 end
