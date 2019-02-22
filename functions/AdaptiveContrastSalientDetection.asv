@@ -252,12 +252,19 @@ lfx=sum(l_fq,1)+0.0001;
 lfy=sum(l_fq,2)+0.0001;
 if strcmp(ft_param,'fft')%结合二阶导数
 %     lfx=filter2([0.5,0.5],lfx);%平滑滤波
-    d2fx=[lfx(1)-lfx(2),2*lfx(2:10)-lfx(1:9)-lfx(3:11),0];
-    lfx=lfx-d2fx;
+    d2fx=[0,2*lfx(2:10)-lfx(1:9)-lfx(3:11),0];
+    flag=11;
+    for i=2:10
+        if d2fx(i)>0
+            flag=i;
+            break;
+        end
+    end
+    lfx=-d2fx;
     
 %     lfy=filter2([0.5;0.5],lfy);%平滑滤波
-    d2fy=[lfy(1)-lfy(2);2*lfy(2:10)-lfy(1:9)-lfy(3:11);0];
-    lfy=lfy-d2fy;
+    d2fy=[0;2*lfy(2:10)-lfy(1:9)-lfy(3:11);0];
+    lfy=-d2fy;
 else
     
 end
