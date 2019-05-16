@@ -1,6 +1,6 @@
 # Saliency-Detection-FDC
 
-Fast Visual saliency detection based on fequency domain analysis and Contrast enhancement.
+Fast Visual saliency detection based on fequency domain analysis and Contrast enhancement.  
 For more information, please contact author by: williamli_pro@163.com
 
 # Abstract
