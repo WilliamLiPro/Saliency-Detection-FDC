@@ -8,23 +8,15 @@ Aiming at the problem in visual saliency detection with frequency domain analysi
 # Results
 ![Procedures](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/procedures.png)
 
-![Sample](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/sample.jpg)
+![filter example](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/filter-example.png)
 
-![feature](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/features.jpg)
+![saliency maps comparison](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/saliency-maps.png)
 
-![gauss low](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/gauss-low.jpg)
+![MAP](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/MAP.jpg)
 
-![gauss band](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/gauss-band.jpg)
+![AUC](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/AUC.jpg)
 
-![DoG](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/DOG.jpg)
-
-![saliency maps comparison](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/saliency-maps.png)
-
-![MAP](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/MAP.jpg)
-
-![AUC](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/AUC.jpg)
-
-![ACC](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/ACC.jpg)
+![ACC](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/ACC.jpg)
 
 # References
 > [1]	BORJI A, CHENG M M, HOU Q, et al. Salient Object Detection: A Survey[J]. Eprint Arxiv, 2014, 16(7):3118.
