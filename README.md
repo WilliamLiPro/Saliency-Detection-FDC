@@ -8,7 +8,7 @@ Aiming at the problem in visual saliency detection with frequency domain analysi
 # Results
 ![Procedures](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/procedures.png)
 
-![Sample](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/sample.jpg)
+![Sample](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/sample.jpg)
 
 ![feature](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/features.jpg)
 
