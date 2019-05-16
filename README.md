@@ -7,7 +7,9 @@ Aiming at the problem in visual saliency detection with frequency domain analysi
 
 # Results
 ![Sample](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/sample.jpg)
-![feature](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/features.jpg)
+
+![feature](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/features.jpg)
+
 ![gauss low](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/gauss low.jpg)
 ![gauss band](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/gauss band.jpg)
 ![DoG](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/DOG.jpg)
