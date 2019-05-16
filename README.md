@@ -6,7 +6,14 @@ Fast Visual saliency detection based on fequency domain analysis and Contrast en
 Aiming at the problem in visual saliency detection with frequency domain analysis where the scale information of different frequency cannot be fully used at present, a fast saliency detection algorithm based on multi-scale Difference of Gaussians fusion in frequency domain is proposed. Based on the Difference of Gaussians feature, the Difference of Gaussians operator at all scales is integrated in the frequency domain by using the linear property of Fourier transform, so that a saliency map with comprehensive features of Difference of Gaussians in all scales is obtained. To improve the robustness of the algorithm, the cutoff frequency of the foreground feature is adaptively estimated based on the prior distribution of the high frequency and the low frequency in the spectrum. To improve the accuracy of saliency detection, the Lab color space and post-processing with Difference of Gaussians filter are applied to enhance the adaptability of the algorithm to foregrounds in various scales and to suppress the background noise. Experiments in dataset show that the proposed algorithm maintains high real-time performance (28.0ms) while ensuring high precision (AUC is greater than 0.9018). It effectively overcomes the difficulty of combining both accuracy and real-time performance for the saliency detection based on frequency domain analysis.
 
 # Results
-! https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/sample.jpg
+! [Sample](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/sample.jpg)
+! [feature](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/features.jpg)
+! [gauss low](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/gauss low.jpg)
+! [gauss band](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/gauss band.jpg)
+! [DoG](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/DOG.jpg)
+! [saliency maps comparison](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/saliency maps.png)
+! [MAP](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/MAP.emf)
+! [feature](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/saliency maps.png)
 
 # References
 > [1]	BORJI A, CHENG M M, HOU Q, et al. Salient Object Detection: A Survey[J]. Eprint Arxiv, 2014, 16(7):3118.
