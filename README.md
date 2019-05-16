@@ -7,16 +7,14 @@ Aiming at the problem in visual saliency detection with frequency domain analysi
 
 # Results
 ![Sample](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/sample.jpg)
-
 ![feature](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/features.jpg)
-
-![gauss low](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/gauss low.jpg)
-![gauss band](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/gauss band.jpg)
-![DoG](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/DOG.jpg)
-![saliency maps comparison](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/saliency maps.png)
-![MAP](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/MAP.emf)
-![AUC](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/AUC.emf)
-![ACC](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part%20of%20experiment%20result/ACC.emf)
+![gauss low](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/gauss low.jpg)
+![gauss band](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/gauss band.jpg)
+![DoG](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/DOG.jpg)
+![saliency maps comparison](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/saliency maps.png)
+![MAP](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/MAP.emf)
+![AUC](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/AUC.emf)
+![ACC](https://github.com/WilliamLiPro/Saliency-Detection-FDC/tree/master/Part-of-experiment-result/ACC.emf)
 
 # References
 > [1]	BORJI A, CHENG M M, HOU Q, et al. Salient Object Detection: A Survey[J]. Eprint Arxiv, 2014, 16(7):3118.
