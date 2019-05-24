@@ -2,9 +2,9 @@
 % 为频域对比度增强选取最优色彩空间和尺度滤波
 
 %%  读取路径
-im_path='E:\Dataset\显著目标检测\Li Jian\Images\';
-gt_path='E:\Dataset\显著目标检测\Li Jian\GT gray\';
-result_path='E:\物体检测与识别\论文工作\显著性检测\频域法显著性检测核函数性能分析\实验结果\对比度法最优组合\';
+im_path='..\Li Jian\Images\';
+gt_path='..\Li Jian\GT gray\';
+result_path='..\Result\';
 
 im_name=imagePathRead(im_path);
 gt_name=imagePathRead(gt_path);

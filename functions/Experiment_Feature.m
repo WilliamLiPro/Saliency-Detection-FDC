@@ -9,8 +9,8 @@
 %   结果由特征图及其幅度谱展示
 
 %%  读取路径
-im_path='E:\Dataset\显著目标检测\Li Jian\Images\';
-gt_path='E:\Dataset\显著目标检测\Li Jian\GT gray\';
+im_path='..\Li Jian\Images\';
+gt_path='..\Li Jian\GT gray\';
 
 im_name=imagePathRead(im_path);
 gt_name=imagePathRead(gt_path);

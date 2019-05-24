@@ -3,9 +3,9 @@
 % 使用5种不同标准差的尺度滤波
 
 %%  读取路径
-im_path='E:\Dataset\显著目标检测\Li Jian\Images\';
-gt_path='E:\Dataset\显著目标检测\Li Jian\GT gray\';
-result_path='E:\物体检测与识别\论文工作\显著性检测\频域法显著性检测核函数性能分析\实验结果\精度对比实验\';
+im_path='..\Li Jian\Images\';
+gt_path='..\Li Jian\GT gray\';
+result_path='..\Result\';
 
 im_name=imagePathRead(im_path);
 gt_name=imagePathRead(gt_path);
@@ -14,23 +14,32 @@ im_n=length(im_name);
 %%  设置显著性检测参数
 params.centra='cos';                %中心化遮罩:cos
 
-feature=cell(4,1);
-feature{1}='sign';
+feature=cell(7,1);
+feature{1}='IS';%image signature
 feature{2}='SR';
 feature{3}='log';
-feature{4}='SSS';
+feature{4}='HFT';
+feature{5}='FSI';
+feature{6}='SFT';
+feature{7}='FAS';
 
-colorspace=cell(4,1);
+colorspace=cell(7,1);
 colorspace{1}='lab';
 colorspace{2}='hsv';
-colorspace{3}='hsv';
+colorspace{3}='rgb';
 colorspace{4}='lab';
+colorspace{5}='lab';
+colorspace{6}='lab';
+colorspace{7}='lab';
 
-scalefilter=cell(4,1);
+scalefilter=cell(7,1);
 scalefilter{1}='gaussLow';
 scalefilter{2}='DOG';
 scalefilter{3}='gaussLow';
 scalefilter{4}='gaussLow';
+scalefilter{5}='gaussLow';
+scalefilter{6}='DOG';
+scalefilter{7}='gaussLow';
 
 filter_size=[0.02,0.4;0.04,0.4;0.06,0.5;0.1,0.7;0.15,0.7]; %不同方法的细节尺度范围
 
