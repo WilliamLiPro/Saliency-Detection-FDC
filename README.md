@@ -1,7 +1,10 @@
 # Saliency-Detection-FDC
 
-Fast Visual saliency detection based on fequency domain analysis and Contrast enhancement.  
+Fast Visual saliency detection based on fequency domain analysis and integrated DoG filter.  
 For more information, please contact author by: williamli_pro@163.com
+
+The preprint paper (written in Chinese) has been submitted to:
+https://www.researchgate.net/publication/333809502_Fast_Saliency_Detection_Algorithm_Based_on_Multi-scale_Difference_of_Gaussians_Fusion_in_Frequency_Domain
 
 # Abstract
 Aiming at the problem in visual saliency detection with frequency domain analysis where the scale information of different frequency cannot be fully used at present, a fast saliency detection algorithm based on multi-scale Difference of Gaussians fusion in frequency domain is proposed. Based on the Difference of Gaussians feature, the Difference of Gaussians operator at all scales is integrated in the frequency domain by using the linear property of Fourier transform, so that a saliency map with comprehensive features of Difference of Gaussians in all scales is obtained. To improve the robustness of the algorithm, the cutoff frequency of the foreground feature is adaptively estimated based on the prior distribution of the high frequency and the low frequency in the spectrum. To improve the accuracy of saliency detection, the Lab color space and post-processing with Difference of Gaussians filter are applied to enhance the adaptability of the algorithm to foregrounds in various scales and to suppress the background noise. Experiments in dataset show that the proposed algorithm maintains high real-time performance (28.0ms) while ensuring high precision (AUC is greater than 0.9018). It effectively overcomes the difficulty of combining both accuracy and real-time performance for the saliency detection based on frequency domain analysis.
