@@ -171,7 +171,7 @@ for i=1:c
     end
     
     ft_channel=msg_mat.*msg_mat; %特征图
-    weight=(std(ft_channel(:))/mean(ft_channel(:))+0.000000001)^6;   %通道权重
+    weight=(std(ft_channel(:))/(mean(ft_channel(:))+0.000000001))^6;   %通道权重
     
     % 加权
     if i==1
