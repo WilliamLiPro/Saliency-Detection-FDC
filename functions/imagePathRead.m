@@ -21,4 +21,5 @@ im_name=cell(img_num,1);
 for i=1:img_num
     im_name{i}=img_path_list(i).name;
 end
+im_name=sort_nat(im_name);
 end
