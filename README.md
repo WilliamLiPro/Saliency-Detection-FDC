@@ -1,9 +1,9 @@
 # Saliency-Detection-FDC
 
-Fast Visual saliency detection based on fequency domain analysis and integrated DoG filter.  
+Fast Visual Saliency Based on Multi-scale Difference of Gaussians Fusion in Frequency Domain.  
 For more information, please contact author by: williamli_pro@163.com
 
-The preprint paper (written in Chinese) has been submitted to:
+The preprint paper has been submitted to:
 https://www.researchgate.net/publication/333809502_Fast_Saliency_Detection_Algorithm_Based_on_Multi-scale_Difference_of_Gaussians_Fusion_in_Frequency_Domain
 
 # Abstract
