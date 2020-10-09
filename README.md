@@ -1,4 +1,4 @@
-# Saliency-Detection-FDC
+# Saliency-Detection-MDF
 
 Fast Visual Saliency Based on Multi-scale Difference of Gaussians Fusion in Frequency Domain.  
 For more information, please contact author by: williamli_pro@163.com
