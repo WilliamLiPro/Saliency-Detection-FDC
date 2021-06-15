@@ -1,10 +1,10 @@
 # Saliency-Detection-MDF
 
-![Procedures](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/procedure.png)
+![Procedures](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-result/procedure.png)
 
-![filter example](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/filter-example.png)
+![filter example](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-result/filter-example.png)
 
-![saliency maps comparison](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-experiment-result/saliency_maps.png)
+![saliency maps comparison](https://raw.githubusercontent.com/WilliamLiPro/Saliency-Detection-FDC/master/Part-of-result/saliency_maps.png)
 
 Fast Visual Saliency Based on Multi-scale Difference of Gaussians Fusion in Frequency Domain.  
 For more information, please contact author by: williamli_pro@163.com
